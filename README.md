@@ -1,11 +1,11 @@
 # angularTest
 ===========
   ```bash
-  $ git clone https://github.com/krotsky/reactTest.git
+  $ git clone https://github.com/krotsky/angularTest.git
   ```
   
   ```bash
-  $ cd reactTest
+  $ cd angularTest
   ```
   
   ```bash
