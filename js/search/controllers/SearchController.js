@@ -22,7 +22,7 @@ app.controller('SearchController', ['$rootScope', '$scope', '$filter', '$timeout
     //if it's first filter we do it
     if (isFields()) {
       if (Object.getOwnPropertyNames($scope.filters).length === 0) {
-      doFilter();
+        doFilter(filter);
       } else {
         angular.forEach($scope.filters, function(value, key) {
           // if filter object has this filter and it's not filterByColor we disable it and doFilter for all enabled filters
@@ -38,7 +38,7 @@ app.controller('SearchController', ['$rootScope', '$scope', '$filter', '$timeout
             });
           }
         });
-        doFilter();
+        doFilter(filter);
       }
     } else {
       //if fields are empty
@@ -49,7 +49,7 @@ app.controller('SearchController', ['$rootScope', '$scope', '$filter', '$timeout
       $scope.items = $scope.itemsSafe;
     }
 
-    function doFilter() {
+    function doFilter(filter) {
       switch (filter) {
         case 'filterByDate':
           filterByDate()
