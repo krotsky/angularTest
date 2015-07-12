@@ -1,0 +1,62 @@
+[
+  {
+    "id": "01",
+    "name": "mackbook",
+    "color": "white",
+    "issueDate": 1436994000000,
+    "price": 2000,
+    "raiting": 5,
+    "inStock": true,
+    "img": "/img/img01.jpg"
+  },
+  {
+    "id": "02",
+    "name": "iphone",
+    "color": "black",
+    "issueDate": 1433192400000,
+    "price": 1000,
+    "raiting": 4,
+    "inStock": true,
+    "img": "/img/img02.png"
+  },
+  {
+    "id": "03",
+    "name": "ipad",
+    "color": "yellow",
+    "issueDate": 1439326800000,
+    "price": 1000,
+    "raiting": 3,
+    "inStock": false,
+    "img": "/img/img02.png"
+  },
+  {
+    "id": "04",
+    "name": "watch",
+    "color": "green",
+    "issueDate": 1440190800000,
+    "price": 1500,
+    "raiting": 2,
+    "inStock": false,
+    "img": "/img/img04.jpg"
+  },
+  {
+    "id": "05",
+    "name": "mac",
+    "color": "white",
+    "issueDate": 1434142800000,
+    "price": 2000,
+    "raiting": 4,
+    "inStock": false,
+    "img": "/img/img05.jpg"
+  },
+  {
+    "id": "06",
+    "name": "mac pro",
+    "color": "black",
+    "issueDate": 1435525200000,
+    "price": 3000,
+    "raiting": 5,
+    "inStock": true,
+    "img": "/img/img06.jpg"
+  }
+]

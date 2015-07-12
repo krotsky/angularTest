@@ -1,0 +1,47 @@
+<td class="col-sm-6"><img ng-src="{{item.img}}" alt="image" class="img-responsive" style="height: 100px;"></td>
+<td>
+  <table>
+    <tr>
+      <td>{{item.name}}</td>
+    </tr>
+    <tr>
+      <td>{{item.color}}</td>
+    </tr>
+  </table>
+</td>
+<td>
+  <table>
+    <tr>
+      <td>{{item.issueDate | date}}</td>
+    </tr>
+    <tr>
+      <td>in stock <input ng-checked="item.inStock" type="checkbox" disabled="disabled"></td>
+    </tr>
+  </table>
+</td>
+<td ng-if="item.quantity >= 1">
+  <table>
+    <tr>
+      <td>{{item.quantity}} x {{item.price | currency}}</td>
+    </tr>
+    <tr>
+      <td>
+        {{item.quantity * item.price | currency}}
+      </td>
+    </tr>
+  </table>
+</td>
+<td ng-if="item.quantity === undefined">
+  <table>
+    <tr>
+      <td>
+        {{item.price | currency}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button ng-click="addToCart(item)" class="btn btn-default">Order</button>
+      </td>
+    </tr>
+  </table>
+</td>

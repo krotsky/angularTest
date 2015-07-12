@@ -1,0 +1,89 @@
+<div class="form-horizontal">
+  <div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Date from:</label>
+          <div class="col-sm-8 input-group">
+            <input ng-model="dateFrom" ng-blur="filter('filterByDate')" id="dateFrom" type="text" class="form-control" />
+            <span class="input-group-addon btn"><i class="glyphicon glyphicon-calendar"></i></span>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="col-sm-4 control-label">Date to:</label>
+        <div class="col-sm-8 input-group">
+          <input ng-model="dateTo" ng-blur="filter('filterByDate')" id="dateTo" type="text" class="form-control" />
+          <span class="input-group-addon btn"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="col-sm-12">
+        <label ng-click="filter('filterInStock')" for="inStock" class="control-label">In stock only</label>&nbsp;
+        <input ng-click="filter('filterInStock')" ng-model="checkbox" type="checkbox" id="inStock">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Price from:</label>
+          <div class="col-sm-8" style="padding-right:0;padding-left:0">
+            <input ng-model="priceFrom" ng-blur="filter('filterByPrice')" type="number" class="form-control" />
+          </div>
+        </div>
+        <label class="label label-danger">{{error}}</label>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <label class="col-sm-4 control-label">Price to:</label>
+        <div class="col-sm-8" style="padding-right:0;padding-left:0">
+          <input ng-model="priceTo" ng-blur="filter('filterByPrice')" type="number" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label ng-click="filterInStock(checkbox)" for="inStock" class="col-sm-4 control-label">Color:</label>
+      <div class="col-sm-8">
+        <select ng-options='option.value as option.name for option in colorOptions' ng-model="color" ng-init="color='null'" ng-click="filter('filterByColor')" class="form-control"></select>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <tr ng-repeat="item in items" row item="item">
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Cart</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tr ng-repeat="cartItem in cart" row item="cartItem">
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
