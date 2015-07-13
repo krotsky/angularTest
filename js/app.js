@@ -39,6 +39,6 @@ window.routes = {
   "/search": {
     controller: 'SearchController',
     templateUrl: '/js/search/views/search.html',
-    requireLogin: false //TODO: true
+    requireLogin: true
   }
 }
