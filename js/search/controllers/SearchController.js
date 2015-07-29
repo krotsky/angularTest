@@ -1,4 +1,4 @@
-app.controller('SearchController', ['$rootScope', '$scope', '$filter', '$timeout', 'itemsData', function($rootScope, $scope, $filter, $timeout, itemsData) {
+app.controller('SearchController', ['$rootScope', '$scope', '$filter', 'itemsData', function($rootScope, $scope, $filter, itemsData) {
   'use strict';
 
   $scope.filters = {};
@@ -19,19 +19,22 @@ app.controller('SearchController', ['$rootScope', '$scope', '$filter', '$timeout
   ];
 
   $scope.filter = function(filter) {
-    //if it's first filter we do it
+    // check full fields
     if (isFields()) {
+      //if it's first filter we do it
       if (Object.getOwnPropertyNames($scope.filters).length === 0) {
         doFilter(filter);
       } else {
         angular.forEach($scope.filters, function(value, key) {
-          // if filter object has this filter and it's not filterByColor we disable it and doFilter for all enabled filters
+          // if filter object has this filter
           if (key === filter) {
+            // and it's not filterByColor we disable it
             if (filter !== 'filterByColor') {
               $scope.filters[key] === true ? $scope.filters[key] = false : $scope.filters[key] = true;
             }
             $scope.items = $scope.itemsSafe;
             return angular.forEach($scope.filters, function(value, key) {
+              // and doFilter for all enabled filters
               if (value) {
                 doFilter(key);
               }
