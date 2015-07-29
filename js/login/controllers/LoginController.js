@@ -8,11 +8,9 @@ app.controller('LoginController', ['$rootScope', '$scope', '$location', 'usersSt
 
     function isMatch(email, pass) {
       for(var i = 0; i < users.length; i++) {
-        if(users[i].email === email) {
-          if(users[i].password === pass) {
-            sessionService.setUserAuthenticated(true);
-            return true;
-          }
+        if(users[i].email === email && users[i].password === pass) {
+          sessionService.setUserAuthenticated(true);
+          return true;
         }
       }
     }
